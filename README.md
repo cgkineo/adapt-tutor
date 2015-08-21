@@ -6,7 +6,7 @@ An Adapt core contributed extension which is passed some feedback data and displ
 
 To use:
 
-```javascript
+```json
 
     "_feedback": {
       "_type": "overlay"
