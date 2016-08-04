@@ -11,9 +11,15 @@
 				{{{a11y_text body}}}
 				</div>
 			</div>
+			{{#if _feedback._closeButtonText}}
+			<button class="close-button-text" aria-label="{{_globals._accessibility._ariaLabels.closePopup}}">
+			{{{_feedback._closeButtonText}}}
+			</button>
+			{{else}}
 			<button class="close-button" aria-label="{{_globals._accessibility._ariaLabels.closePopup}}">
-	           <div class="notify-popup-icon-close icon icon-cross"></div>
-	        </button>
+				<div class="notify-popup-icon-close icon icon-cross"></div>
+			</button>
+			{{/if}}
 		</div>
 	</div>
 </div>
