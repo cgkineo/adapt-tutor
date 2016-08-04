@@ -9,8 +9,8 @@ To use:
 ```json
 
     "_feedback": {
-      "_type": "overlay"
-      
+      "_type": "overlay",
+      "_closeButtonText": "Hide feedback"
     },
     
     "_feedback": {
