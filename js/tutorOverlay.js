@@ -6,7 +6,7 @@ define([
 	var TutorOverlay = Backbone.View.extend({
 
 		events: {
-			"click .close-button": "onCloseClick"
+			"click .close-button, .close-button-text": "onCloseClick"
 		},
 
 		initialize: function () {
@@ -20,7 +20,8 @@ define([
 		render: function() {
 			var alertObject = {
                 title: this.model.get("feedbackTitle"),
-                body: this.model.get("feedbackMessage")
+                body: this.model.get("feedbackMessage"),
+                _feedback: this.model.get("_feedback")
             };
 
 			var $componentInner = this.$(".component-inner");
@@ -56,7 +57,9 @@ define([
 
     	},
 
-		onCloseClick: function() {
+		onCloseClick: function(e) {
+			e.preventDefault();
+			e.stopPropagation();
 			this.$(".tutor-overlay").velocity("stop").velocity({
             	"opacity": 0
             }, {
